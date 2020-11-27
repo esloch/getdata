@@ -1,0 +1,10 @@
+name: env-lab
+channels:
+- conda-forge
+- defaults
+dependencies:
+- pandas
+- pip
+- python
+- plotly=4.13.0
+- jupyterlab
