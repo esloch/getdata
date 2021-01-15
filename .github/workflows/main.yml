@@ -1,16 +1,38 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Run on demand
+# Name is optional and if present must be used
+# in the url path for badges
+name: Docs Build and Deploy Firebase
 
 on:
-  issue_comment:
-    types: [created, edited]
+  # ONLY triggers on master branch
+  repository_dispatch:
+    types: [dev-docs-build, master-docs-build]
 
 jobs:
-  ondemand:
+  test:
     runs-on: ubuntu-latest
-    if: github.event.comment.body == 'OK to test'
-
     steps:
-      - name: Hello world
-        run: echo Hello world, I was run on demand by ${GITHUB_ACTOR}
+      - name: Test Echo 1
+        run: echo "test echo"
+  # Build the site and deploy docs when the have been updated
+  devDocsBuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Echo 2
+        run: echo "test echo"
+      - uses: actions/checkout@v2
+        with:
+          # hardcoded ci-test branch ref
+          ref: ci-test
+      - run: echo ${{ github.event.client_payload.sha }}
+
+  # Build the site and deploy docs when the have been updated
+  master-docs-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Echo 3
+        run: echo "test echo"
+      - uses: actions/checkout@master
+        with:
+         # dynamic ref passed from action. either dev or master
+          ref: ${{ github.event.client_payload.ref }}
+      - run: echo ${{ github.event.client_payload.sha }}
