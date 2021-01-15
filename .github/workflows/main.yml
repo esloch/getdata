@@ -1,6 +1,6 @@
 # Name is optional and if present must be used
 # in the url path for badges
-name: Docs Build and Deploy Firebase
+name: Test workflow on push
 
 on: push
 jobs:
@@ -9,9 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          date > generated.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
+          echo "RODANDO O CI"
