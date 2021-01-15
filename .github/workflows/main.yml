@@ -9,10 +9,10 @@ name: Test workflow on push
 #   push:
 #     types: [opened]
 
-on:
-  pull_request:
-    types: [assigned, opened, synchronize, reopened]
-  push:
+on: [push, pull_request]
+  # pull_request:
+  #   types: [assigned, opened, synchronize, reopened]
+  # push:
     
 
 jobs:
