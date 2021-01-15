@@ -10,18 +10,22 @@ name: Test workflow on push
 #     types: [opened]
 
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the master branch
-  registry_package:
-    types: [updated]
-  pull_request:
-    types: [opened] #assigned, opened, synchronize, reopened
-
+  push
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          echo "RODANDO O CI"
+
+      # Commits to master
+      - name: Push all
+        if: ${{ github.event_name == 'push'}}
+        run: |
+          echo "Run only Push"
+
+      # Commits to master
+      - name: Send commits to master
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        run: |
+          echo "Run only PR master"
