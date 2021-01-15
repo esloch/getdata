@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Commits to master
+      # Only push to repo
       - name: Run only on push
         if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/master'}}
         run: |
