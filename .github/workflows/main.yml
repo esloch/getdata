@@ -27,6 +27,7 @@ jobs:
         run: |
           echo "Run only Push"
 
+      - uses: actions/checkout@v2
       # Commits to master
       - name: Run on send commits to master
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
