@@ -2,37 +2,16 @@
 # in the url path for badges
 name: Docs Build and Deploy Firebase
 
-on:
-  # ONLY triggers on master branch
-  repository_dispatch:
-    types: [dev-docs-build, master-docs-build]
-
+on: push
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Test Echo 1
-        run: echo "test echo"
-  # Build the site and deploy docs when the have been updated
-  devDocsBuild:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test Echo 2
-        run: echo "test echo"
       - uses: actions/checkout@v2
-        with:
-          # hardcoded ci-test branch ref
-          ref: ci-test
-      - run: echo ${{ github.event.client_payload.sha }}
-
-  # Build the site and deploy docs when the have been updated
-  master-docs-build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test Echo 3
-        run: echo "test echo"
-      - uses: actions/checkout@master
-        with:
-         # dynamic ref passed from action. either dev or master
-          ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.sha }}
+      - run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
