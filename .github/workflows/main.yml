@@ -10,10 +10,7 @@ name: Test workflow on push
 #     types: [opened]
 
 on: [push, pull_request]
-  # pull_request:
-  #   types: [assigned, opened, synchronize, reopened]
-  # push:
-    
+
 
 jobs:
   build:
@@ -21,13 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Only push to repo
-      - name: Run only on push
-        if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/master'}}
-        run: |
-          echo "Run only Push"
+      # # Only push to repo
+      # - name: Run only on push
+      #   if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/master'}}
+      #   run: |
+      #     echo "Run only Push"
 
-      - uses: actions/checkout@v2
       # Commits to master
       - name: Run on send commits to master
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
