@@ -26,6 +26,6 @@ jobs:
 
       # Commits to master
       - name: Run on send commits to master
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/master' }}
         run: |
           echo "Run only PR master"
