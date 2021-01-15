@@ -19,13 +19,13 @@ jobs:
       - uses: actions/checkout@v2
 
       # Commits to master
-      - name: Push all
-        if: ${{ github.event_name == 'push'}}
+      - name: Run only on push
+        if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/master'}}
         run: |
           echo "Run only Push"
 
       # Commits to master
-      - name: Send commits to master
+      - name: Run on send commits to master
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         run: |
           echo "Run only PR master"
