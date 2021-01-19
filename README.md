@@ -21,7 +21,6 @@ $ sudo apt update && sudo apt -y upgrade \
 
 #### Build and run containers
 > Use make from the repository root:<br>
->> AlertaDengueCaptura$ make -f docker/crawlclima/Makefile
 ```bash
 AlertaDengueCaptura$ make -f docker/crawlclima/Makefile install_alertadenguecaptura
 AlertaDengueCaptura$ make -f docker/crawlclima/Makefile configure_ci_downloader_app
