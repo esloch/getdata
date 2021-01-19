@@ -6,7 +6,7 @@ This repo contains the code for automatic capture of climatic data by the Crawlc
 
 #### Requirements
 
-Download the Data project to run the apps as the data from the demo databes.
+Download the Data project to run the apps as the data from the demo databes.<br>
 See: https://github.com/AlertaDengue/Data
 
 #### Update and install essentials
@@ -35,11 +35,11 @@ $ make -f docker/crawlclima/Makefile deploy_crawlclima
 ```bash
 $ make -f docker/crawlclima/Makefile build_crawlclima
 ```
-###### Run containers and start app
+###### Run containers and start services
 ```bash
 $ make -f docker/crawlclima/Makefile deploy_crawlclima
 ```
-###### Entry into container for crawlclima app
+###### Entry into container for crawlclima
 ```bash
 $ make -f docker/crawlclima/Makefile exec_crawlclima
 ```
