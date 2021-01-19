@@ -69,6 +69,6 @@ $ make -f docker/crawlclima/Makefile clean
 ###### Run tests into container
 
 ```bash
-make -f docker/satellite/Makefile flake8_downloader_app:
-make -f docker/satellite/Makefile test_downloader_app:
+make -f docker/satellite/Makefile flake8_downloader_app
+make -f docker/satellite/Makefile test_downloader_app
 ```
