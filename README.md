@@ -27,7 +27,7 @@ AlertaDengueCaptura$ make -f docker/crawlclima/Makefile configure_ci_downloader_
 AlertaDengueCaptura$ make -f docker/crawlclima/Makefile build_crawlclima
 AlertaDengueCaptura$ make -f docker/crawlclima/Makefile deploy_crawlclima
 ```
-> The crontab Schedule can be edited manually in the file::<br>
+> The crontab Schedule can be edited manually in the file:<br>
 ```bash
 AlertaDengueCaptura$ vim docker/crawlclima/cron_tasks
 ```
