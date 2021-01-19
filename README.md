@@ -20,7 +20,8 @@ $ sudo apt update && sudo apt -y upgrade \
 *https://docs.docker.com/compose/install/*
 
 #### Build and run containers
-
+> Use make from the repository root::<br>
+> AlertaDengueCaptura$ make -f docker/crawlclima/Makefile
 ```bash
 $ make -f docker/crawlclima/Makefile install_alertadenguecaptura
 $ make -f docker/crawlclima/Makefile configure_ci_downloader_app
@@ -28,19 +29,36 @@ $ make -f docker/crawlclima/Makefile build_crawlclima
 $ make -f docker/crawlclima/Makefile deploy_crawlclima
 ```
 
-#### Make commands
-Use make from the repository root::<br>
-AlertaDengueCaptura$ make -f docker/satellite/Makefile
+### Others Make commands
 
+###### build services to images docker
 ```bash
-make -f docker/satellite/Makefile build_downloader_app:
-make -f docker/satellite/Makefile deploy_downloader_app: build_downloader_app
-make -f docker/satellite/Makefile exec_downloader_app: deploy_downloader_app
-make -f docker/satellite/Makefile stop_downloader_app
-make -f docker/satellite/Makefile restart_downloader_app: stop_downloader_app
-make -f docker/satellite/Makefile install_alertadenguecaptura
-make -f docker/satellite/Makefile configure_ci_downloader_app
-make -f docker/satellite/Makefile clean
+$ make -f docker/crawlclima/Makefile build_crawlclima
+```
+###### Run containers and start app
+```bash
+$ make -f docker/crawlclima/Makefile deploy_crawlclima
+```
+###### Entry into container for crawlclima app
+```bash
+$ make -f docker/crawlclima/Makefile exec_crawlclima
+```
+###### Stop an remove containers
+```bash
+$ make -f docker/crawlclima/Makefile stop_crawlclima
+```
+###### Restart containers
+```bash
+$ make -f docker/crawlclima/Makefile restart_crawlclima
+```
+###### Configure project and install requirements dev
+```bash
+$ make -f docker/crawlclima/Makefileinstall_alertadenguecaptura
+```
+
+###### Clean containers
+```bash
+$ make -f docker/crawlclima/Makefile clean
 ```
 ###### Run tests into container
 
