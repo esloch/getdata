@@ -1,36 +1,31 @@
-# This is a basic workflow to help you get started with Actions
+# Name is optional and if present must be used
+# in the url path for badges
+name: Test workflow on push
 
-name: CI
+# on: # [push, pull_request]
+#   pull_request:
+#     branches: [main]
+#     types: [opened]
+#   push:
+#     types: [opened]
 
-# Controls when the action will run. 
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # # Only push to repo
+      # - name: Run only on push
+      #   if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/master'}}
+      #   run: |
+      #     echo "Run only Push"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # Commits to master
+      - name: Run on send commits to master
+        if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/master' }}
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "Run only PR master"
