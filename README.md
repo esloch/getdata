@@ -27,16 +27,16 @@ $ sudo apt update && sudo apt -y upgrade \
 *https://docs.docker.com/compose/install/*
 
 #### Build and run containers
-> Use make from the repository root:<br>
+> Use the make command within the root directory AlertDengueCapture/:<br>
 ```bash
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile install_alertadenguecaptura
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile configure_ci_downloader_app
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile build_crawlclima
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile deploy_crawlclima
+$ make -f docker/crawlclima/Makefile install_alertadenguecaptura
+$ make -f docker/crawlclima/Makefile configure_ci_downloader_app
+$ make -f docker/crawlclima/Makefile build_crawlclima
+$ make -f docker/crawlclima/Makefile deploy_crawlclima
 ```
 > The crontab schedule can be edited manually in the file:<br>
 ```bash
-AlertaDengueCaptura$ vim docker/crawlclima/cron_tasks
+$ vim docker/crawlclima/cron_tasks
 ```
 > After modifying the crontab you will need to do a new build and deploy. <br>
 > It is also possible to modify it using the "crontab -e" page inside the Crawlclima app container.<br>
