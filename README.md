@@ -43,20 +43,20 @@ AlertaDengueCaptura$ vim docker/crawlclima/cron_tasks
 
 ### Others Make commands
 
-| <h6><b> build services to images docker </b></h6> | <br>
-| ``` $ make -f docker/crawlclima/Makefile build_crawlclima ``` | <br>
+| <h6><b> build services to images docker </b></h6> |
+| ``` $ make -f docker/crawlclima/Makefile build_crawlclima ``` |
 | <h6><b> Run containers and start services </b></h6> | <br>
-| ``` $ make -f docker/crawlclima/Makefile deploy_crawlclima ``` | <br> 
+| ``` $ make -f docker/crawlclima/Makefile deploy_crawlclima ``` |
 | <h6><b> Entry into container for crawlclima </b></h6> | <br>
-| ``` $ make -f docker/crawlclima/Makefile exec_crawlclima ``` | <br>
+| ``` $ make -f docker/crawlclima/Makefile exec_crawlclima ``` |
 | <h6><b>  Stop an remove containers </b></h6> | <br>
-| ``` $ make -f docker/crawlclima/Makefile stop_crawlclima ``` | <br>  
-| <b> Restart containers </b></h6> | <br>
-| ``` $ make -f docker/crawlclima/Makefile restart_crawlclima ``` | <br>
-| <h6><b> Configure project and install requirements dev </b></h6> | <br>
-| ``` $ make -f docker/crawlclima/Makefileinstall_alertadenguecaptura ``` | <br>
-| <h6><b> Clean containers </b></h6> | <br>
-| ``` $ make -f docker/crawlclima/Makefile clean ``` |<br> 
-| <h6><b> Run tests into container </b></h6> | <br>
-| ``` $ make -f docker/satellite/Makefile flake8_downloader_app ``` | <br>
-| ``` $ make -f docker/satellite/Makefile test_downloader_app ``` | <br>
+| ``` $ make -f docker/crawlclima/Makefile stop_crawlclima ``` |
+| <h6><b> Restart containers </b></h6> | <br>
+| ``` $ make -f docker/crawlclima/Makefile restart_crawlclima ``` |
+| <h6><b> Configure project and install requirements dev </b></h6> |
+| ``` $ make -f docker/crawlclima/Makefileinstall_alertadenguecaptura ``` |
+| <h6><b> Clean containers </b></h6> |
+| ``` $ make -f docker/crawlclima/Makefile clean ``` |
+| <h6><b> Run tests into container </b></h6> |
+| ``` $ make -f docker/satellite/Makefile flake8_downloader_app ``` |
+| ``` $ make -f docker/satellite/Makefile test_downloader_app ``` |
