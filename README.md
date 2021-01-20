@@ -9,6 +9,13 @@ This repo contains the code for automatic capture of climatic data by the Crawlc
 Download the Data project to run the apps as the data from the demo databes.<br>
 See: https://github.com/AlertaDengue/Data
 
+#### Configure environment
+Copy the example_env file by renaming it to .env into the docker / crawlclima directory:
+```bash
+cp example_env_file /docker/crawclima/.env
+```
+Modify the variables of file system and database connection according to needs
+
 #### Update and install essentials
 ```bash
 $ sudo apt update && sudo apt -y upgrade \
@@ -36,38 +43,20 @@ AlertaDengueCaptura$ vim docker/crawlclima/cron_tasks
 
 ### Others Make commands
 
-###### build services to images docker
-```bash
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile build_crawlclima
-```
-###### Run containers and start services
-```bash
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile deploy_crawlclima
-```
-###### Entry into container for crawlclima
-```bash
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile exec_crawlclima
-```
-###### Stop an remove containers
-```bash
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile stop_crawlclima
-```
-###### Restart containers
-```bash
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile restart_crawlclima
-```
-###### Configure project and install requirements dev
-```bash
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefileinstall_alertadenguecaptura
-```
-
-###### Clean containers
-```bash
-AlertaDengueCaptura$ make -f docker/crawlclima/Makefile clean
-```
-###### Run tests into container
-
-```bash
-AlertaDengueCaptura$ make -f docker/satellite/Makefile flake8_downloader_app
-AlertaDengueCaptura$ make -f docker/satellite/Makefile test_downloader_app
-```
+| <h6><b> build services to images docker </b></h6> | <br>
+| ``` $ make -f docker/crawlclima/Makefile build_crawlclima ``` | <br>
+| <h6><b> Run containers and start services </b></h6> | <br>
+| ``` $ make -f docker/crawlclima/Makefile deploy_crawlclima ``` | <br> 
+| <h6><b> Entry into container for crawlclima </b></h6> | <br>
+| ``` $ make -f docker/crawlclima/Makefile exec_crawlclima ``` | <br>
+| <h6><b>  Stop an remove containers </b></h6> | <br>
+| ``` $ make -f docker/crawlclima/Makefile stop_crawlclima ``` | <br>  
+| <b> Restart containers </b></h6> | <br>
+| ``` $ make -f docker/crawlclima/Makefile restart_crawlclima ``` | <br>
+| <h6><b> Configure project and install requirements dev </b></h6> | <br>
+| ``` $ make -f docker/crawlclima/Makefileinstall_alertadenguecaptura ``` | <br>
+| <h6><b> Clean containers </b></h6> | <br>
+| ``` $ make -f docker/crawlclima/Makefile clean ``` |<br> 
+| <h6><b> Run tests into container </b></h6> | <br>
+| ``` $ make -f docker/satellite/Makefile flake8_downloader_app ``` | <br>
+| ``` $ make -f docker/satellite/Makefile test_downloader_app ``` | <br>
