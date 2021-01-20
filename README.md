@@ -43,20 +43,20 @@ AlertaDengueCaptura$ vim docker/crawlclima/cron_tasks
 
 ### Others Make commands
 
-<h6><b> build services to images docker </b></h6> |
-| ``` $ make -f docker/crawlclima/Makefile build_crawlclima ``` |
-| <h6><b> Run containers and start services </b></h6> |
-| ``` $ make -f docker/crawlclima/Makefile deploy_crawlclima ``` |
-| <h6><b> Entry into container for crawlclima </b></h6> |
-| ``` $ make -f docker/crawlclima/Makefile exec_crawlclima ``` |
-| <h6><b>  Stop an remove containers </b></h6> |
-| ``` $ make -f docker/crawlclima/Makefile stop_crawlclima ``` |
-| <h6><b> Restart containers </b></h6> |
-| ``` $ make -f docker/crawlclima/Makefile restart_crawlclima ``` |
-| <h6><b> Configure project and install requirements dev </b></h6> |
-| ``` $ make -f docker/crawlclima/Makefileinstall_alertadenguecaptura ``` |
-| <h6><b> Clean containers </b></h6> |
-| ``` $ make -f docker/crawlclima/Makefile clean ``` |
-| <h6><b> Run tests into container </b></h6> |
-| ``` $ make -f docker/satellite/Makefile flake8_downloader_app ``` |
-| ``` $ make -f docker/satellite/Makefile test_downloader_app ``` |
+<i><i><b> build services to images docker </b></i></br>
+``` $ make -f docker/crawlclima/Makefile build_crawlclima ```</br>
+<i><b> Run containers and start services </b></i></br>
+``` $ make -f docker/crawlclima/Makefile deploy_crawlclima ```</br>
+<i><b> Entry into container for crawlclima </b></i></br>
+``` $ make -f docker/crawlclima/Makefile exec_crawlclima ```</br>
+<i><b>  Stop an remove containers </b></i></br>
+``` $ make -f docker/crawlclima/Makefile stop_crawlclima ```</br>
+<i><b> Restart containers </b></i></br>
+``` $ make -f docker/crawlclima/Makefile restart_crawlclima ```</br>
+<i><b> Configure project and install requirements dev </b></i></br>
+``` $ make -f docker/crawlclima/Makefileinstall_alertadenguecaptura ```</br>
+<i><b> Clean containers </b></i></br>
+``` $ make -f docker/crawlclima/Makefile clean ```</br>
+<i><b> Run tests into container </b></i></br>
+``` $ make -f docker/satellite/Makefile flake8_downloader_app ```</br>
+``` $ make -f docker/satellite/Makefile test_downloader_app ```</br>
