@@ -42,16 +42,15 @@ AlertaDengueCaptura$ vim docker/crawlclima/cron_tasks
 > It is also possible to modify it using the "crontab -e" page inside the Crawlclima app container.<br>
 
 ### Others Make commands
-
 | <h6><b> build services to images docker </b></h6> |
 | ``` $ make -f docker/crawlclima/Makefile build_crawlclima ``` |
-| <h6><b> Run containers and start services </b></h6> | <br>
+| <h6><b> Run containers and start services </b></h6> |
 | ``` $ make -f docker/crawlclima/Makefile deploy_crawlclima ``` |
-| <h6><b> Entry into container for crawlclima </b></h6> | <br>
+| <h6><b> Entry into container for crawlclima </b></h6> |
 | ``` $ make -f docker/crawlclima/Makefile exec_crawlclima ``` |
-| <h6><b>  Stop an remove containers </b></h6> | <br>
+| <h6><b>  Stop an remove containers </b></h6> |
 | ``` $ make -f docker/crawlclima/Makefile stop_crawlclima ``` |
-| <h6><b> Restart containers </b></h6> | <br>
+| <h6><b> Restart containers </b></h6> |
 | ``` $ make -f docker/crawlclima/Makefile restart_crawlclima ``` |
 | <h6><b> Configure project and install requirements dev </b></h6> |
 | ``` $ make -f docker/crawlclima/Makefileinstall_alertadenguecaptura ``` |
